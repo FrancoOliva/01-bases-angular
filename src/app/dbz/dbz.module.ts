@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { MainPaigeComponent } from './main-paige/main-paige.component';
+import { PersonajesComponent } from './personajes/personajes.component';
 
 
 
 @NgModule({
   declarations: [
-    MainPaigeComponent
+    MainPaigeComponent,
+    PersonajesComponent
   ],
   exports:[
     MainPaigeComponent
