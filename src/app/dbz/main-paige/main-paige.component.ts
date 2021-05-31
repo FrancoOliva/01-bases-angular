@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
 
 
@@ -7,7 +7,7 @@ import { Personaje } from '../interfaces/dbz.interface';
   templateUrl: './main-paige.component.html',
   styleUrls: ['./main-paige.component.css']
 })
-export class MainPaigeComponent implements OnInit {
+export class MainPaigeComponent {
 
   personajes: Personaje[] = [
     {
@@ -21,27 +21,12 @@ export class MainPaigeComponent implements OnInit {
   ]
 
   nuevo: Personaje = {
-    nombre: '',
-    poder: 0
+    nombre: 'Maestro Roshi',
+    poder: 1000
   }
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  agregar(){
-    
-    if ( this.nuevo.nombre.trim().length === 0 ){
-      return;
-    }
-
-    this.personajes.push(this.nuevo); // agregamos al arreglo de personajes el personaje insertado en los inputs
-    
-    this.nuevo = { // reseteamos los valores
-      nombre: '',
-      poder: 0
-    }
+  
+  agregarNuevoPersonaje(personaje: Personaje){
+    this.personajes.push( personaje );
   }
 
 }
